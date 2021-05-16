@@ -25,8 +25,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'pivot'
     ];
+
+
 
     /**
      * The attributes that should be cast to native types.
@@ -37,6 +39,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // $user->specialties
+    public function specialties()
+    {
+        return $this->belongsToMany(Specialty::class)->withTimeStamps();
+    }
 
     public function scopePatients($query)
     {
@@ -47,4 +54,26 @@ class User extends Authenticatable
     {
         return $query -> where('role','doctor');
     }
+
+    public function attendedAppointments()
+    {
+        return $this->asDoctorAppointments()->where('status','Atendida');
+    }
+
+      public function cancelledAppointments()
+    {
+        return $this->asDoctorAppointments()->where('status','Cancelada');
+    }
+
+    public function asDoctorAppointments()
+    {
+        return $this->hasMany(Appointment::class,'doctor_id');
+    }
+
+     public function asPatientAppointments()
+    {
+        return $this->hasMany(Appointment::class,'patient_id');
+    }
+
+
 }

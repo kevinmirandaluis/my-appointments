@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSpecialtiesTable extends Migration
+class AddStatusToAppointments extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateSpecialtiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('specialties', function (Blueprint $table) {
-            $table->Increments('id');
-
-            $table->string('name');
-            $table->string('description')->nullable();
-
-            $table->timestamps();
+        Schema::table('appointments', function (Blueprint $table) {
+            //
+            $table ->string('status')->default('Reservada');
         });
+
+
     }
 
     /**
@@ -30,6 +28,8 @@ class CreateSpecialtiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('specialties');
+        Schema::table('appointments', function (Blueprint $table) {
+            $table->dropColumn('statuts');
+        });
     }
 }
