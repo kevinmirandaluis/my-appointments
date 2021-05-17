@@ -10,10 +10,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth','admin'])->namespace('Admin')->group(function (){
+
 Route::get('/specialties', 'SpecialtyController@index');
 Route::get('/specialties/create', 'SpecialtyController@create'); //form registro
 Route::get('/specialties/{specialty}/edit', 'SpecialtyController@edit'); 
-
 Route::post('/specialties', 'SpecialtyController@store');//Envio del form
 Route::put('/specialties/{specialty}', 'SpecialtyController@update'); 
 Route::delete('/specialties/{specialty}', 'SpecialtyController@destroy'); 
@@ -49,7 +49,6 @@ Route::middleware('auth')->group(function(){
 	Route::get('/appointments/{appointment}/cancel', 'AppointmentController@showCancelForm');
 	Route::post('/appointments/{appointment}/cancel', 'AppointmentController@postCancel');
 	Route::post('/appointments/{appointment}/confirm', 'AppointmentController@postConfirm');
-
 
 	//JSON
 	Route::get('/specialties/{specialty}/doctors','Api\SpecialtyController@doctors');
