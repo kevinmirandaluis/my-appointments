@@ -16,12 +16,12 @@ class AuthController extends Controller
     	if(Auth::guard('api')->attempt($credentials)){
     		$user = Auth::guard('api')->user();
     		$jwt = JwtAuth::generateToken($user);
-    		$sucess = true;
+    		$success = true;
  		 
     		return compact('sucess','user','jwt');
 
     	} else {
-    		$sucess = false;
+    		$success = false;
     		$message = 'Invalid credentials';
     		return compact('sucess','message');
     	}
@@ -31,7 +31,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::guard('api')->logout();
-        $sucess = true;
+        $success = true;
         return compact('sucess');
     }
 }
