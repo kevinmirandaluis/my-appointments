@@ -15,11 +15,9 @@ Route::middleware('auth:api')->group(function (){
 Route::get('/user', 'UserController@show');
 Route::post('/logout','AuthController@logout');
 
-//post appointment
-Route::post('/appointments', 'AppointmentController@store');
-
-//apointments
+//appointment
 Route::get('/appointments', 'AppointmentController@index');
+Route::post('/appointments', 'AppointmentController@store');
 
 
 });
