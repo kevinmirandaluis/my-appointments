@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 
 
 Route::post('/login','AuthController@login');
+Route::post('/register','AuthController@register');
 
 Route::get('/specialties','SpecialtyController@index');
 Route::get('/specialties/{specialty}/doctors','SpecialtyController@doctors');
