@@ -16,13 +16,13 @@ class CreateCancelledAppointmentsTable extends Migration
         Schema::create('cancelled_appointments', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->string('justification')->nullable();
+
             $table->unsignedInteger('appointment_id');
             $table->foreign('appointment_id')->references('id')->on('appointments');
 
-            $table->string('justification')->nullable();
-
-            $table->unsignedInteger('cancelled_by');
-            $table->foreign('cancelled_by')->references('id')->on('users');
+            $table->unsignedInteger('cancelled_by_id');
+            $table->foreign('cancelled_by_id')->references('id')->on('users');
 
 
             $table->timestamps();
