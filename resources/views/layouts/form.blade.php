@@ -24,7 +24,7 @@
     <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark">
       <div class="container px-4">
         <a class="navbar-brand" href="{{ url('/') }}">
-          <img src="{{ asset('img/brand/white.png') }}" />
+          <img src="{{ asset('img/brand/blanco.png') }}" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
             <div class="row">
               <div class="col-6 collapse-brand">
                 <a href="../index.html">
-                  <img src="{{ asset('img/brand/blue.png') }}">
+                  <img src="{{ asset('img/brand/blando.png') }}">
                 </a>
               </div>
               <div class="col-6 collapse-close">
@@ -95,18 +95,8 @@
       <div class="row align-items-center justify-content-xl-between">
         <div class="col-xl-6">
           <div class="copyright text-center text-xl-left text-muted">
-            &copy; 2018 <a href="/" class="font-weight-bold ml-1">{{ config('app.name') }}</a>
+            &copy; 2021 <a href="/" class="font-weight-bold ml-1">{{ config('app.name') }}</a>
           </div>
-        </div>
-        <div class="col-xl-6">
-          <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-            <li class="nav-item">
-              <a href="https://www.creative-tim.com" class="nav-link" target="_blank">Template</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank">Acerca de</a>
-            </li>
-          </ul>
         </div>
       </div>
     </div>
