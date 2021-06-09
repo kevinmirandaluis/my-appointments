@@ -41,7 +41,7 @@
 
        <div class="form-group">
         <label for="dni">DNI</label>
-        <input type="text" name="dni" class="form-control" value="{{ old('dni') }}">
+        <input type="text" maxlength=8 name="dni" class="form-control" value="{{ old('dni') }}">
        </div>
 
        <div class="form-group">
@@ -56,7 +56,7 @@
 
        <div class="form-group">
         <label for="password">Contraseña</label>
-        <input type="text" name="password" class="form-control" value="{{ old('password' ,str_random(6)) }}">
+        <input type="text" name="password" class="form-control" required value="{{ old('password' ,str_random(6)) }}">
        </div>
 
         <div class=form-group>

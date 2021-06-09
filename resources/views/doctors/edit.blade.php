@@ -42,7 +42,7 @@
 
        <div class="form-group">
         <label for="dni">DNI</label>
-        <input type="text" name="dni" class="form-control" value="{{ old('dni',$doctor->dni)}}">
+        <input type="text" maxlength=8 name="dni" class="form-control" value="{{ old('dni',$doctor->dni)}}">
        </div>
 
        <div class="form-group">
