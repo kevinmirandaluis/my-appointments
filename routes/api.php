@@ -20,5 +20,6 @@ Route::post('/logout','AuthController@logout');
 Route::get('/appointments', 'AppointmentController@index');
 Route::post('/appointments', 'AppointmentController@store');
 
-
+//fcm
+Route::post('/fcm/token','FirebaseController@postToken');
 });
