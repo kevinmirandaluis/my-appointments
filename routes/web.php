@@ -28,6 +28,8 @@ Route::get('/charts/appointments/line', 'ChartController@appointments');
 Route::get('/charts/doctors/column', 'ChartController@doctors');
 Route::get('/charts/doctors/column/data', 'ChartController@doctorsJson');
 
+Route::post('/fcm/send', 'FirebaseController@sendAll');
+
 });
 
 
