@@ -78,7 +78,10 @@ class User extends Authenticatable
 
     public function sendFCM($message)
     {
-            return fcm()
+        if(!$this->device_token)
+            return;
+
+        return fcm()
             ->to([
                 $this->device_token
             ])
