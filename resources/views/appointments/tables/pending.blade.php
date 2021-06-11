@@ -50,7 +50,6 @@
             <form action="{{ url('/appointments/'.$appointment->id.'/confirm') }}"
               method="POST" class="d-inline-block">
               @csrf
-
               <button class="btn btn-sm btn-success" type="submit" 
                 data-toggle="tooltip" title="Confirmar cita">
                 <i class="ni ni-check-bold"></i>
