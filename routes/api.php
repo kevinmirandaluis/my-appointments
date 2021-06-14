@@ -13,8 +13,10 @@ Route::get('/schedule/hours','ScheduleController@hours');
 
 Route::middleware('auth:api')->group(function (){
 
-Route::get('/user', 'UserController@show');
-Route::post('/logout','AuthController@logout');
+	Route::get('/user', 'UserController@show');
+	Route::post('/user', 'UserController@update');
+	
+	Route::post('/logout','AuthController@logout');
 
 //appointment
 Route::get('/appointments', 'AppointmentController@index');
