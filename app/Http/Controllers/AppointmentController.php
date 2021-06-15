@@ -91,7 +91,7 @@ class AppointmentController extends Controller
     	$notification= 'La cita se ha registrado correctamente!';
         else
         $notification = 'Ocurrió un problema al registrar la cita medica';
-    	return back()->with(compact('notification'));
+    	return redirect('/appointments')->with(compact('notification'));
     }
 
     public function showCancelForm(Appointment $appointment)
