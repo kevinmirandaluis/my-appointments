@@ -11,7 +11,7 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="/specialties">
+    <a class="nav-link" href="/patients">
       <i class="ni ni-satisfied text-blue"></i> Mis Pacientes
     </a>
   </li>
